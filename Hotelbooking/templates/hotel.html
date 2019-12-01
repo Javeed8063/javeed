@@ -1,0 +1,47 @@
+{%  load staticfiles %}
+<html>
+<body>
+<form action="/save/" method="post">
+    {% csrf_token %}
+    <table align="center" border="0">
+        <tr>
+            <th colspan="2">
+                <img src="{% static 'icon/Mandarin-Oriental-Jumeira,-Dubai---Lobby---Copy.jpg' %}" width="50" height="50">
+            </th>
+            <th><span style="color: darkblue;font-size: 40px" >J's Hotel's</span> </th>
+        </tr>
+        <tr><td colspan="2">Guest Name    </td>
+            <td><input type="text" name="name"></td>
+        </tr>
+        <tr><td colspan="2">Guest Contact </td>
+            <td><input type="number" name="contactno">
+            </td>
+        </tr>
+        <tr><td colspan="2">Address </td>
+            <td><input type="text" name="address" style="height: 75px;">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" aria-required="true">Select Room Type</td>
+            <td colspan="2" >
+                <label style='margin-right: 1em;' onmouseup='var temp = this.children[0]; if (temp.checked) { setTimeout(function() { temp.checked = false; }, 0); }'><input type="radio" name="checks[]" value="1500" >Ordinary</label><br/>
+                <label style='margin-right: 1em;' onmouseup='var temp = this.children[0]; if (temp.checked) { setTimeout(function() { temp.checked = false; }, 0); }'><input type="radio" name="checks[]" value="2500">Delux</label><br/>
+                <label style='margin-right: 1em;' onmouseup='var temp = this.children[0]; if (temp.checked) { setTimeout(function() { temp.checked = false; }, 0); }'><input type="radio" name="checks[]" value="5000">Suite Room</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">Amenities</td>
+            <td colspan="2">
+                <input type="checkbox" name="checks[]" value="1000">Computers<br/>
+                <input type="checkbox" name="checks[]" value="250">Gym<br/>
+                <input type="checkbox" name="checks[]" value="50">Mineral Water
+            </td>
+        </tr>
+        <tr><td><br/></td></tr>
+        <tr>
+            <th colspan="4"><button type="submit">Submit</button> </th>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
